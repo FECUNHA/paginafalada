@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Página Falada — Os livros do podcast</title>
+<meta name="description" content="Todos os livros comentados no Página Falada, reunidos em um lugar só.">
+
+<!-- Troque pela URL final depois de publicar -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Página Falada — Os livros do podcast">
+<meta property="og:description" content="Todos os livros comentados no podcast, reunidos em um lugar só.">
+<meta property="og:url" content="https://SEUUSUARIO.github.io/paginafalada/">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#0A304C; --navy-dark:#07243A; --gold:#C49C61;
+  --cream:#F7E0C6; --ink:#07243A; --muted:rgba(247,224,198,.62);
+  --radius:14px; --maxw:1160px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--navy-dark);color:var(--cream);font-family:'Poppins',system-ui,sans-serif;font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+
+.topbar{background:var(--navy);border-bottom:1px solid rgba(196,156,97,.25);padding:18px 0}
+.topbar .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.mark{width:52px;height:52px;flex:none}
+.wordmark{display:flex;flex-direction:column;line-height:1.15}
+.wordmark b{font-weight:600;font-size:1.05rem;letter-spacing:.02em}
+.wordmark span{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.social{margin-left:auto;display:flex;gap:10px}
+.social a{font-size:.78rem;letter-spacing:.06em;text-decoration:none;border:1px solid rgba(196,156,97,.45);border-radius:999px;padding:7px 15px;transition:background .2s,color .2s,border-color .2s}
+.social a:hover{background:var(--gold);color:var(--navy-dark);border-color:var(--gold)}
+
+.hero{background:var(--navy);padding:58px 0 42px}
+.hero h1{font-weight:600;font-size:clamp(1.9rem,5vw,3.1rem);line-height:1.12;letter-spacing:-.02em;max-width:17ch}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p{margin-top:16px;max-width:54ch;color:var(--muted);font-size:1.02rem}
+.wave{display:flex;align-items:flex-end;gap:5px;height:54px;margin-top:32px}
+.wave i{display:block;width:5px;border-radius:3px;background:var(--gold);transform-origin:bottom center;opacity:.85;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+@media (prefers-reduced-motion:reduce){.wave i{animation:none;transform:scaleY(.6)}}
+.aviso{margin-top:32px;display:inline-block;background:rgba(196,156,97,.12);border:1px solid rgba(196,156,97,.4);border-radius:var(--radius);padding:12px 18px;font-size:.85rem;font-weight:500}
+
+.controls{padding:34px 0 6px}
+.busca{width:100%;max-width:420px;background:rgba(247,224,198,.07);border:1px solid rgba(196,156,97,.35);border-radius:999px;padding:12px 20px;color:var(--cream);font-family:inherit;font-size:.95rem;font-weight:300}
+.busca::placeholder{color:rgba(247,224,198,.45)}
+.chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+.chip{background:none;border:1px solid rgba(196,156,97,.4);color:var(--cream);font-family:inherit;font-size:.82rem;font-weight:400;padding:8px 17px;border-radius:999px;cursor:pointer;transition:all .18s}
+.chip:hover{border-color:var(--gold)}
+.chip[aria-pressed="true"]{background:var(--gold);color:var(--navy-dark);border-color:var(--gold);font-weight:500}
+.contagem{margin-top:18px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+.grade{display:grid;gap:26px;padding:24px 0 70px;grid-template-columns:repeat(auto-fill,minmax(268px,1fr))}
+.card{background:var(--cream);color:var(--ink);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .22s ease,box-shadow .22s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(0,0,0,.34)}
+@media (prefers-reduced-motion:reduce){.card,.card:hover{transition:none;transform:none}}
+
+.capa{aspect-ratio:3/4;background:var(--navy);position:relative;overflow:hidden}
+.capa img{width:100%;height:100%;object-fit:contain;display:block;background:var(--navy)}
+.capa-tipo{height:100%;padding:26px 22px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dark) 100%);border-left:5px solid var(--gold)}
+.capa-tipo .a{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.capa-tipo .t{font-weight:600;font-size:1.2rem;line-height:1.25;color:var(--cream)}
+.capa-tipo .pontos{display:flex;gap:7px}
+.capa-tipo .pontos b{width:11px;height:11px;border-radius:50%;display:block}
+.tag-ar{position:absolute;top:12px;left:12px;background:var(--gold);color:var(--navy-dark);font-size:.62rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
+
+.corpo{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1;gap:8px}
+.cat{font-size:.67rem;letter-spacing:.16em;text-transform:uppercase;color:#8A6A38;font-weight:500}
+.corpo h2{font-size:1.06rem;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+.sub{font-size:.82rem;font-weight:400;color:rgba(7,36,58,.55);line-height:1.4}
+.autor{font-size:.85rem;color:rgba(7,36,58,.7)}
+.nota{font-size:.89rem;line-height:1.55;color:rgba(7,36,58,.82);flex:1;padding-top:2px}
+.acoes{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.btn{display:block;text-align:center;text-decoration:none;font-family:inherit;font-size:.88rem;font-weight:500;padding:11px 16px;border-radius:9px;transition:all .18s}
+.btn-amazon{background:var(--navy);color:var(--cream)}
+.btn-amazon:hover{background:var(--gold);color:var(--navy-dark)}
+.btn-episodio{border:1px solid rgba(10,48,76,.35);color:var(--navy)}
+.btn-episodio:hover{border-color:var(--navy);background:rgba(10,48,76,.06)}
+.publi{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(7,36,58,.5);text-align:center}
+
+.vazio{padding:60px 0;text-align:center;color:var(--muted)}
+.vazio b{display:block;color:var(--cream);font-weight:500;margin-bottom:6px}
+
+footer{background:var(--navy);border-top:1px solid rgba(196,156,97,.25);padding:44px 0 54px}
+footer .wave{height:24px;margin:0 0 24px}
+footer p{font-size:.85rem;color:var(--muted);max-width:62ch}
+footer p + p{margin-top:12px}
+footer strong{color:var(--cream);font-weight:500}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <svg class="mark" viewBox="0 0 100 100" role="img" aria-label="Página Falada">
+      <circle cx="50" cy="50" r="47" fill="#0A304C" stroke="#C49C61" stroke-width="2.5"/>
+      <rect x="44" y="19" width="12" height="23" rx="6" fill="#C49C61"/>
+      <path d="M37 37a13 13 0 0 0 26 0" fill="none" stroke="#C49C61" stroke-width="3" stroke-linecap="round"/>
+      <line x1="50" y1="50" x2="50" y2="55" stroke="#C49C61" stroke-width="3" stroke-linecap="round"/>
+      <path d="M21 62c10-6 20-6 29-2 9-4 19-4 29 2v9c-10-6-20-6-29-2-9-4-19-4-29 2z" fill="#F7E0C6"/>
+      <line x1="50" y1="60" x2="50" y2="69" stroke="#0A304C" stroke-width="1.6"/>
+    </svg>
+    <span class="wordmark"><b>Página Falada</b><span>Dica de livros</span></span>
+    <nav class="social">
+      <a href="https://instagram.com/paginafaladadicalivros" target="_blank" rel="noopener">Instagram</a>
+      <a href="#" target="_blank" rel="noopener">Podcast</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Os livros que <em>viraram episódio</em>.</h1>
+    <p>Cada título aqui foi lido, resumido e comentado no Página Falada. Se algum te interessou no ar, ele está nesta página.</p>
+    <div class="wave" aria-hidden="true"></div>
+    <p class="aviso">Como Associado da Amazon, recebo por compras qualificadas.</p>
+  </div>
+</section>
+
+<div class="wrap controls">
+  <input class="busca" id="busca" type="search" placeholder="Buscar por título ou autor" aria-label="Buscar livro">
+  <div class="chips" id="chips" role="group" aria-label="Filtrar por categoria"></div>
+  <p class="contagem" id="contagem"></p>
+</div>
+
+<main class="wrap"><div class="grade" id="grade"></div></main>
+
+<footer>
+  <div class="wrap">
+    <div class="wave" aria-hidden="true"></div>
+    <p><strong>Como Associado da Amazon, recebo por compras qualificadas.</strong> Os links desta página levam para a Amazon e, se você comprar por eles, uma comissão volta pra sustentar o podcast — sem custo nenhum a mais pra você.</p>
+    <p>Página Falada · @paginafaladadicalivros</p>
+  </div>
+</footer>
+
+<script>
+/* Capas: true usa a imagem da coluna "link imagem" da planilha.
+   false ignora e desenha a capa tipográfica navy/dourado.
+   Veja a observação sobre hotlink antes de deixar em true. */
+const USAR_CAPAS_AMAZON = true;
+
+/* ===== LIVROS:INICIO — bloco gerado a partir da planilha ===== */
+const LIVROS = [
+  {id:1,titulo:"A Coragem de Não Agradar",subtitulo:"",autor:"Ichiro Kishimi e Fumitake Koga",categoria:"Desenvolvimento pessoal",nota:"Um diálogo socrático sobre a psicologia de Adler. A tese incômoda: quase todo sofrimento nasce da necessidade de aprovação alheia.",link:"https://link.amazon/B0eEtKLQL",capa:"https://m.media-amazon.com/images/I/711jdH7ZawL._SY466_.jpg",episodio:"",noAr:true},
+  {id:2,titulo:"A Fórmula da Autoconfiança",subtitulo:"",autor:"Napoleon Hill",categoria:"Desenvolvimento pessoal",nota:"Hill destrincha o mecanismo da autoconfiança como algo treinável, não como talento de nascença.",link:"https://link.amazon/B0dPDkED1",capa:"https://m.media-amazon.com/images/I/41eDaIMEOaL._SY445_SX342_ML2_.jpg",episodio:"",noAr:true},
+  {id:3,titulo:"Comunicação Não Violenta",subtitulo:"",autor:"Marshall B. Rosenberg",categoria:"Comunicação",nota:"Quatro passos para dizer o que incomoda sem transformar a conversa em briga. Muda reunião, muda casa.",link:"https://link.amazon/B0aL8YYqO",capa:"https://m.media-amazon.com/images/I/51Gx35khLzL._SY466_.jpg",episodio:"",noAr:false},
+  {id:4,titulo:"O Poder do Hábito",subtitulo:"Por que fazemos o que fazemos na vida e nos negócios",autor:"Charles Duhigg",categoria:"Produtividade",nota:"O loop de gatilho, rotina e recompensa. Entender o ciclo é o que permite trocar o hábito em vez de brigar com ele.",link:"https://link.amazon/B06JJTzoR",capa:"https://m.media-amazon.com/images/I/815iPX0SgkL._SY425_.jpg",episodio:"",noAr:false},
+  {id:5,titulo:"Como Convencer Alguém em 90 Segundos",subtitulo:"",autor:"Nicholas Boothman",categoria:"Comunicação",nota:"Primeira impressão como técnica: postura, sincronia e tom. Prático a ponto de dar pra testar no mesmo dia.",link:"https://link.amazon/B06WpEE6K",capa:"https://m.media-amazon.com/images/I/61AXguQqf9L._SY342_.jpg",episodio:"",noAr:false},
+  {id:6,titulo:"Box Clássicos de William Shakespeare",subtitulo:"Com 7 marcadores de páginas",autor:"William Shakespeare",categoria:"Clássicos",nota:"A caixa completa para quem sempre adiou Shakespeare. Tradução de Júlio Emílio Braz.",link:"https://link.amazon/B0azryrmO",capa:"https://m.media-amazon.com/images/I/614GCLvmE4L._SY342_.jpg",episodio:"",noAr:false},
+  {id:7,titulo:"Verity",subtitulo:"",autor:"Colleen Hoover",categoria:"Ficção",nota:"Thriller psicológico com um manuscrito no centro da trama. Daqueles que se lê em dois dias e se discute por semanas.",link:"https://link.amazon/B06MP0JWL",capa:"https://m.media-amazon.com/images/I/91SDZ2eUj+L._SY466_.jpg",episodio:"",noAr:false},
+  {id:8,titulo:"O Século dos Imbecis",subtitulo:"",autor:"Valter Hugo Mãe",categoria:"Ficção",nota:"Prosa portuguesa sobre inocência e crueldade contemporânea. Curto, mas fica.",link:"https://link.amazon/B07I7iCl6",capa:"https://m.media-amazon.com/images/I/71fQhcL5S-L._SY466_.jpg",episodio:"",noAr:false},
+  {id:9,titulo:"A Metamorfose",subtitulo:"Die Verwandlung",autor:"Franz Kafka",categoria:"Clássicos",nota:"Um homem acorda inseto e a família se adapta rápido demais. A parte perturbadora nunca foi a transformação.",link:"https://link.amazon/B0aZRmtAl",capa:"https://m.media-amazon.com/images/I/715JOcuqSSL._SY425_.jpg",episodio:"",noAr:false},
+  {id:10,titulo:"1984",subtitulo:"",autor:"George Orwell",categoria:"Clássicos",nota:"Vigilância, linguagem e verdade sob controle. O vocabulário do livro virou vocabulário do noticiário.",link:"https://link.amazon/B05nBnVZz",capa:"https://m.media-amazon.com/images/I/819js3EQwbL._SY466_.jpg",episodio:"",noAr:false},
+  {id:11,titulo:"Caixa Homero",subtitulo:"Ilíada & Odisseia",autor:"Homero",categoria:"Clássicos",nota:"As duas epopeias que fundam a literatura ocidental, na caixa que finalmente convence a começar.",link:"https://link.amazon/B01acob2u",capa:"https://m.media-amazon.com/images/I/A1qnARklYSL._SY342_.jpg",episodio:"",noAr:false},
+  {id:12,titulo:"Scrum",subtitulo:"A arte de fazer o dobro do trabalho na metade do tempo",autor:"Jeff Sutherland",categoria:"Gestão",nota:"O criador do Scrum contando de onde veio o método. Vale mais pelas histórias de fracasso que pelo framework.",link:"https://link.amazon/B00uGOK8d",capa:"https://m.media-amazon.com/images/I/91y1jCIfhSL._SY466_.jpg",episodio:"",noAr:false},
+  {id:13,titulo:"Pense e Enriqueça",subtitulo:"A versão original, restaurada e revisada",autor:"Napoleon Hill",categoria:"Desenvolvimento pessoal",nota:"O clássico de 1937 sem os cortes das edições posteriores, com notas explicativas que situam o contexto.",link:"https://link.amazon/B085Z0hDz",capa:"https://m.media-amazon.com/images/I/71pn8H1Ev4L._SY425_.jpg",episodio:"",noAr:false},
+  {id:14,titulo:"Mais Esperto que o Diabo",subtitulo:"",autor:"Napoleon Hill",categoria:"Desenvolvimento pessoal",nota:"Escrito em 1938 e engavetado por décadas. Uma entrevista imaginária sobre medo, hábito e conformismo.",link:"https://link.amazon/B0fNTIhNn",capa:"https://m.media-amazon.com/images/I/819ERrDHRcL._SY466_.jpg",episodio:"",noAr:false},
+  {id:15,titulo:"60 Estratégias Práticas para Ganhar Mais Tempo",subtitulo:"",autor:"Christian Barbosa",categoria:"Produtividade",nota:"Sessenta táticas curtas de gestão de tempo. Formato de consulta: abre, pega uma, aplica.",link:"https://link.amazon/B0hwREwpJ",capa:"https://m.media-amazon.com/images/I/71SplkApy4L._SY425_.jpg",episodio:"",noAr:false}
+];
+/* ===== LIVROS:FIM ===== */
+
+const alturas=[.3,.55,.85,1,.7,.42,.95,.6,.35,.8,1,.5,.28,.68,.9,.45,.75,.32];
+document.querySelectorAll('.wave').forEach(w=>{
+  w.innerHTML = alturas.map((h,i)=>`<i style="height:${Math.round(h*100)}%;animation-delay:${(i*0.11).toFixed(2)}s"></i>`).join('');
+});
+
+const grade=document.getElementById('grade');
+const chips=document.getElementById('chips');
+const busca=document.getElementById('busca');
+const contagem=document.getElementById('contagem');
+let filtro='Todos';
+
+const esc = s => String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+const ordenados=[...LIVROS].sort((a,b)=>(b.noAr?1:0)-(a.noAr?1:0));
+const categorias=['Todos',...new Set(ordenados.map(l=>l.categoria).filter(Boolean))];
+chips.innerHTML=categorias.map(c=>`<button class="chip" data-cat="${esc(c)}" aria-pressed="${c==='Todos'}">${esc(c)}</button>`).join('');
+
+chips.addEventListener('click',e=>{
+  const b=e.target.closest('.chip'); if(!b) return;
+  filtro=b.dataset.cat;
+  chips.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.cat===filtro));
+  render();
+});
+busca.addEventListener('input',render);
+
+function capa(l){
+  if(USAR_CAPAS_AMAZON && l.capa)
+    return `<img src="${esc(l.capa)}" alt="Capa de ${esc(l.titulo)}" loading="lazy">`;
+  return `<div class="capa-tipo">
+      <span class="a">${esc(l.autor)}</span>
+      <span class="t">${esc(l.titulo)}</span>
+      <span class="pontos"><b style="background:#F7E0C6"></b><b style="background:#C49C61"></b><b style="background:rgba(247,224,198,.3)"></b></span>
+    </div>`;
+}
+
+function render(){
+  const termo=busca.value.trim().toLowerCase();
+  const lista=ordenados.filter(l=>{
+    const okCat = filtro==='Todos' || l.categoria===filtro;
+    const okBusca = !termo || l.titulo.toLowerCase().includes(termo) || l.autor.toLowerCase().includes(termo);
+    return okCat && okBusca;
+  });
+
+  contagem.textContent = lista.length ? `${lista.length} ${lista.length===1?'livro':'livros'}` : '';
+
+  if(!lista.length){
+    grade.innerHTML=`<div class="vazio" style="grid-column:1/-1"><b>Nenhum livro com esse termo.</b>Tente outro título, outro autor, ou volte para “Todos”.</div>`;
+    return;
+  }
+
+  grade.innerHTML=lista.map(l=>`
+    <article class="card">
+      <div class="capa">${capa(l)}${l.noAr?'<span class="tag-ar">Já foi ao ar</span>':''}</div>
+      <div class="corpo">
+        ${l.categoria?`<span class="cat">${esc(l.categoria)}</span>`:''}
+        <h2>${esc(l.titulo)}</h2>
+        ${l.subtitulo?`<p class="sub">${esc(l.subtitulo)}</p>`:''}
+        <p class="autor">${esc(l.autor)}</p>
+        <p class="nota">${esc(l.nota)}</p>
+        <div class="acoes">
+          <a class="btn btn-amazon" href="${esc(l.link)}" target="_blank" rel="nofollow sponsored noopener">Ver na Amazon</a>
+          <span class="publi">publi · link de afiliado</span>
+          ${l.episodio?`<a class="btn btn-episodio" href="${esc(l.episodio)}" target="_blank" rel="noopener">Ouvir o episódio</a>`:''}
+        </div>
+      </div>
+    </article>`).join('');
+}
+render();
+</script></body></html>
