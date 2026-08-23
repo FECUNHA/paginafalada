@@ -150,25 +150,9 @@ footer strong{color:var(--cream);font-weight:500}
    Veja a observação sobre hotlink antes de deixar em true. */
 const USAR_CAPAS_AMAZON = true;
 
-/* ===== LIVROS:INICIO — bloco gerado a partir da planilha ===== */
-const LIVROS = [
-  {id:1,titulo:"A Coragem de Não Agradar",subtitulo:"",autor:"Ichiro Kishimi e Fumitake Koga",categoria:"Desenvolvimento pessoal",nota:"Um diálogo socrático sobre a psicologia de Adler. A tese incômoda: quase todo sofrimento nasce da necessidade de aprovação alheia.",link:"https://link.amazon/B0eEtKLQL",capa:"https://m.media-amazon.com/images/I/711jdH7ZawL._SY466_.jpg",episodio:"",noAr:true},
-  {id:2,titulo:"A Fórmula da Autoconfiança",subtitulo:"",autor:"Napoleon Hill",categoria:"Desenvolvimento pessoal",nota:"Hill destrincha o mecanismo da autoconfiança como algo treinável, não como talento de nascença.",link:"https://link.amazon/B0dPDkED1",capa:"https://m.media-amazon.com/images/I/41eDaIMEOaL._SY445_SX342_ML2_.jpg",episodio:"",noAr:true},
-  {id:3,titulo:"Comunicação Não Violenta",subtitulo:"",autor:"Marshall B. Rosenberg",categoria:"Comunicação",nota:"Quatro passos para dizer o que incomoda sem transformar a conversa em briga. Muda reunião, muda casa.",link:"https://link.amazon/B0aL8YYqO",capa:"https://m.media-amazon.com/images/I/51Gx35khLzL._SY466_.jpg",episodio:"",noAr:false},
-  {id:4,titulo:"O Poder do Hábito",subtitulo:"Por que fazemos o que fazemos na vida e nos negócios",autor:"Charles Duhigg",categoria:"Produtividade",nota:"O loop de gatilho, rotina e recompensa. Entender o ciclo é o que permite trocar o hábito em vez de brigar com ele.",link:"https://link.amazon/B06JJTzoR",capa:"https://m.media-amazon.com/images/I/815iPX0SgkL._SY425_.jpg",episodio:"",noAr:false},
-  {id:5,titulo:"Como Convencer Alguém em 90 Segundos",subtitulo:"",autor:"Nicholas Boothman",categoria:"Comunicação",nota:"Primeira impressão como técnica: postura, sincronia e tom. Prático a ponto de dar pra testar no mesmo dia.",link:"https://link.amazon/B06WpEE6K",capa:"https://m.media-amazon.com/images/I/61AXguQqf9L._SY342_.jpg",episodio:"",noAr:false},
-  {id:6,titulo:"Box Clássicos de William Shakespeare",subtitulo:"Com 7 marcadores de páginas",autor:"William Shakespeare",categoria:"Clássicos",nota:"A caixa completa para quem sempre adiou Shakespeare. Tradução de Júlio Emílio Braz.",link:"https://link.amazon/B0azryrmO",capa:"https://m.media-amazon.com/images/I/614GCLvmE4L._SY342_.jpg",episodio:"",noAr:false},
-  {id:7,titulo:"Verity",subtitulo:"",autor:"Colleen Hoover",categoria:"Ficção",nota:"Thriller psicológico com um manuscrito no centro da trama. Daqueles que se lê em dois dias e se discute por semanas.",link:"https://link.amazon/B06MP0JWL",capa:"https://m.media-amazon.com/images/I/91SDZ2eUj+L._SY466_.jpg",episodio:"",noAr:false},
-  {id:8,titulo:"O Século dos Imbecis",subtitulo:"",autor:"Valter Hugo Mãe",categoria:"Ficção",nota:"Prosa portuguesa sobre inocência e crueldade contemporânea. Curto, mas fica.",link:"https://link.amazon/B07I7iCl6",capa:"https://m.media-amazon.com/images/I/71fQhcL5S-L._SY466_.jpg",episodio:"",noAr:false},
-  {id:9,titulo:"A Metamorfose",subtitulo:"Die Verwandlung",autor:"Franz Kafka",categoria:"Clássicos",nota:"Um homem acorda inseto e a família se adapta rápido demais. A parte perturbadora nunca foi a transformação.",link:"https://link.amazon/B0aZRmtAl",capa:"https://m.media-amazon.com/images/I/715JOcuqSSL._SY425_.jpg",episodio:"",noAr:false},
-  {id:10,titulo:"1984",subtitulo:"",autor:"George Orwell",categoria:"Clássicos",nota:"Vigilância, linguagem e verdade sob controle. O vocabulário do livro virou vocabulário do noticiário.",link:"https://link.amazon/B05nBnVZz",capa:"https://m.media-amazon.com/images/I/819js3EQwbL._SY466_.jpg",episodio:"",noAr:false},
-  {id:11,titulo:"Caixa Homero",subtitulo:"Ilíada & Odisseia",autor:"Homero",categoria:"Clássicos",nota:"As duas epopeias que fundam a literatura ocidental, na caixa que finalmente convence a começar.",link:"https://link.amazon/B01acob2u",capa:"https://m.media-amazon.com/images/I/A1qnARklYSL._SY342_.jpg",episodio:"",noAr:false},
-  {id:12,titulo:"Scrum",subtitulo:"A arte de fazer o dobro do trabalho na metade do tempo",autor:"Jeff Sutherland",categoria:"Gestão",nota:"O criador do Scrum contando de onde veio o método. Vale mais pelas histórias de fracasso que pelo framework.",link:"https://link.amazon/B00uGOK8d",capa:"https://m.media-amazon.com/images/I/91y1jCIfhSL._SY466_.jpg",episodio:"",noAr:false},
-  {id:13,titulo:"Pense e Enriqueça",subtitulo:"A versão original, restaurada e revisada",autor:"Napoleon Hill",categoria:"Desenvolvimento pessoal",nota:"O clássico de 1937 sem os cortes das edições posteriores, com notas explicativas que situam o contexto.",link:"https://link.amazon/B085Z0hDz",capa:"https://m.media-amazon.com/images/I/71pn8H1Ev4L._SY425_.jpg",episodio:"",noAr:false},
-  {id:14,titulo:"Mais Esperto que o Diabo",subtitulo:"",autor:"Napoleon Hill",categoria:"Desenvolvimento pessoal",nota:"Escrito em 1938 e engavetado por décadas. Uma entrevista imaginária sobre medo, hábito e conformismo.",link:"https://link.amazon/B0fNTIhNn",capa:"https://m.media-amazon.com/images/I/819ERrDHRcL._SY466_.jpg",episodio:"",noAr:false},
-  {id:15,titulo:"60 Estratégias Práticas para Ganhar Mais Tempo",subtitulo:"",autor:"Christian Barbosa",categoria:"Produtividade",nota:"Sessenta táticas curtas de gestão de tempo. Formato de consulta: abre, pega uma, aplica.",link:"https://link.amazon/B0hwREwpJ",capa:"https://m.media-amazon.com/images/I/71SplkApy4L._SY425_.jpg",episodio:"",noAr:false}
-];
-/* ===== LIVROS:FIM ===== */
+
+const ORIGEM_DADOS = 'livros.json';
+let LIVROS = [], ordenados = [];
 
 const alturas=[.3,.55,.85,1,.7,.42,.95,.6,.35,.8,1,.5,.28,.68,.9,.45,.75,.32];
 document.querySelectorAll('.wave').forEach(w=>{
@@ -183,9 +167,10 @@ let filtro='Todos';
 
 const esc = s => String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-const ordenados=[...LIVROS].sort((a,b)=>(b.noAr?1:0)-(a.noAr?1:0));
-const categorias=['Todos',...new Set(ordenados.map(l=>l.categoria).filter(Boolean))];
-chips.innerHTML=categorias.map(c=>`<button class="chip" data-cat="${esc(c)}" aria-pressed="${c==='Todos'}">${esc(c)}</button>`).join('');
+function montarChips(){
+  const categorias=['Todos',...new Set(ordenados.map(l=>l.categoria).filter(Boolean))];
+  chips.innerHTML=categorias.map(c=>`<button class="chip" data-cat="${esc(c)}" aria-pressed="${c===filtro}">${esc(c)}</button>`).join('');
+}
 
 chips.addEventListener('click',e=>{
   const b=e.target.closest('.chip'); if(!b) return;
@@ -222,7 +207,7 @@ function render(){
 
   grade.innerHTML=lista.map(l=>`
     <article class="card">
-      <div class="capa">${capa(l)}${l.noAr?'<span class="tag-ar">Já foi ao ar</span>':''}</div>
+      <div class="capa">${capa(l)}${l.publicado?'<span class="tag-ar">Já foi ao ar</span>':''}</div>
       <div class="corpo">
         ${l.categoria?`<span class="cat">${esc(l.categoria)}</span>`:''}
         <h2>${esc(l.titulo)}</h2>
@@ -237,5 +222,28 @@ function render(){
       </div>
     </article>`).join('');
 }
-render();
+
+async function carregar(){
+  grade.innerHTML = '<p class="vazio" style="grid-column:1/-1">Carregando os livros…</p>';
+  try{
+    const r = await fetch(ORIGEM_DADOS, {cache:'no-store'});
+    if(!r.ok) throw new Error('HTTP ' + r.status);
+    LIVROS = await r.json();
+  }catch(e){
+    console.error('Falha ao carregar ' + ORIGEM_DADOS, e);
+    grade.innerHTML = `<div class="vazio" style="grid-column:1/-1">
+        <b>Não consegui carregar a lista de livros.</b>
+        Recarregue a página. Se o problema continuar, o arquivo <code>livros.json</code> pode não estar publicado.
+      </div>`;
+    contagem.textContent = '';
+    return;
+  }
+  ordenados = [...LIVROS].sort((a,b)=>{
+    if(a.publicado !== b.publicado) return a.publicado ? -1 : 1;
+    return String(b.dataPublicacao||'').localeCompare(String(a.dataPublicacao||''));
+  });
+  montarChips();
+  render();
+}
+carregar();
 </script></body></html>
