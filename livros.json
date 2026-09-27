@@ -139,7 +139,7 @@
     "link": "https://link.amazon/B01acob2u",
     "capa": "https://m.media-amazon.com/images/I/A1qnARklYSL._SY342_.jpg",
     "episodio": "",
-    "publicado": false,
+    "publicado": true,
     "dataPublicacao": ""
   },
   {
@@ -152,7 +152,7 @@
     "link": "https://link.amazon/B00uGOK8d",
     "capa": "https://m.media-amazon.com/images/I/91y1jCIfhSL._SY466_.jpg",
     "episodio": "",
-    "publicado": false,
+    "publicado": true,
     "dataPublicacao": ""
   },
   {
@@ -165,8 +165,8 @@
     "link": "https://link.amazon/B085Z0hDz",
     "capa": "https://m.media-amazon.com/images/I/71pn8H1Ev4L._SY425_.jpg",
     "episodio": "",
-    "publicado": false,
-    "dataPublicacao": ""
+    "publicado": true,
+    "dataPublicacao": "2026-08-26 8:30"
   },
   {
     "id": 14,
@@ -178,8 +178,8 @@
     "link": "https://link.amazon/B0fNTIhNn",
     "capa": "https://m.media-amazon.com/images/I/819ERrDHRcL._SY466_.jpg",
     "episodio": "",
-    "publicado": false,
-    "dataPublicacao": ""
+    "publicado": true,
+    "dataPublicacao": "2026-08-26 22:25"
   },
   {
     "id": 15,
@@ -191,8 +191,8 @@
     "link": "https://link.amazon/B0hwREwpJ",
     "capa": "https://m.media-amazon.com/images/I/71SplkApy4L._SY425_.jpg",
     "episodio": "",
-    "publicado": false,
-    "dataPublicacao": ""
+    "publicado": true,
+    "dataPublicacao": "2026-08-29 5:01"
   },
   {
     "id": 16,
@@ -204,8 +204,8 @@
     "link": "https://link.amazon/A07VQpv7d",
     "capa": "https://m.media-amazon.com/images/I/71bMXNNkKZL._SY425_.jpg",
     "episodio": "",
-    "publicado": false,
-    "dataPublicacao": ""
+    "publicado": true,
+    "dataPublicacao": "2026-08-30 5:01"
   },
   {
     "id": 17,
@@ -216,6 +216,110 @@
     "nota": "Lido como livro infantil, escrito para adultos. Cada releitura muda de assunto.",
     "link": "https://link.amazon/B0fSmbwGS",
     "capa": "https://m.media-amazon.com/images/I/81QluJ4QXyL._SY425_.jpg",
+    "episodio": "",
+    "publicado": true,
+    "dataPublicacao": "2026-09-02 5:01"
+  },
+  {
+    "id": 18,
+    "titulo": "A Metamorfose",
+    "subtitulo": "",
+    "autor": "Franz Kafka",
+    "categoria": "Literatura e Ficção",
+    "nota": "Um homem acorda inseto e a família se adapta rápido demais. A parte perturbadora nunca foi a transformação.",
+    "link": "https://link.amazon/B020BqHwn",
+    "capa": "https://m.media-amazon.com/images/I/71neJqQwTjL._SY425_.jpg",
+    "episodio": "",
+    "publicado": true,
+    "dataPublicacao": "2026-09-05 5:01"
+  },
+  {
+    "id": 19,
+    "titulo": "Vidas Secas",
+    "subtitulo": "",
+    "autor": "Graciliano Ramos",
+    "categoria": "Literatura e Ficção",
+    "nota": "Uma família de retirantes atravessa a seca do sertão. Poucas palavras, e cada uma pesa.",
+    "link": "https://link.amazon/B0hbUjiZx",
+    "capa": "https://m.media-amazon.com/images/I/618-b9Im6dL._SL1457_.jpg",
+    "episodio": "",
+    "publicado": true,
+    "dataPublicacao": ""
+  },
+  {
+    "id": 20,
+    "titulo": "A Hora da Estrela",
+    "subtitulo": "Edição comemorativa",
+    "autor": "Clarice Lispector",
+    "categoria": "Literatura e Ficção",
+    "nota": "Macabéa, nordestina perdida no Rio, contada por um narrador que duvida de si mesmo. O último romance de Clarice.",
+    "link": "https://link.amazon/B02iK9GVm",
+    "capa": "https://m.media-amazon.com/images/I/61TaHURu27L._SY342_.jpg",
+    "episodio": "",
+    "publicado": true,
+    "dataPublicacao": "2026-09-11 15:14"
+  },
+  {
+    "id": 21,
+    "titulo": "Vivendo Bem com TDAH Adulto",
+    "subtitulo": "Estratégias práticas para melhorar seu dia a dia",
+    "autor": "Laura E. Knouse",
+    "categoria": "Desenvolvimento Pessoal",
+    "nota": "Ferramentas práticas para organização, tempo e foco no dia a dia do adulto com TDAH.",
+    "link": "https://link.amazon/B01kt8jqL",
+    "capa": "https://m.media-amazon.com/images/I/71Muto1wjbL._SL1500_.jpg",
+    "episodio": "",
+    "publicado": true,
+    "dataPublicacao": "2026-09-13 15:14"
+  },
+  {
+    "id": 22,
+    "titulo": "A Estranha na Cama",
+    "subtitulo": "",
+    "autor": "Raphael Montes",
+    "categoria": "Literatura e Ficção",
+    "nota": "",
+    "link": "https://link.amazon/B0fFIM0iw",
+    "capa": "https://m.media-amazon.com/images/I/71YSm7ehYqL._SL1500_.jpg",
+    "episodio": "",
+    "publicado": true,
+    "dataPublicacao": "2026-09-13 23:52"
+  },
+  {
+    "id": 23,
+    "titulo": "A Cabeça do Santo",
+    "subtitulo": "",
+    "autor": "Socorro Acioli",
+    "categoria": "Literatura e Ficção",
+    "nota": "Samuel chega a uma cidadezinha do Ceará e passa a ouvir as preces que as mulheres fazem a Santo Antônio. Realismo mágico com humor e fé popular.",
+    "link": "https://link.amazon/B02X3snu7",
+    "capa": "https://m.media-amazon.com/images/I/71-YhujYUxS._SL1500_.jpg",
+    "episodio": "",
+    "publicado": true,
+    "dataPublicacao": "2026-09-24 22:20"
+  },
+  {
+    "id": 24,
+    "titulo": "Bons Tempos",
+    "subtitulo": "Yesteryear",
+    "autor": "Caro Claire Burke",
+    "categoria": "Literatura e Ficção",
+    "nota": "",
+    "link": "https://link.amazon/B0f79ktne",
+    "capa": "https://m.media-amazon.com/images/I/81-ZGsunjkL._SL1500_.jpg",
+    "episodio": "",
+    "publicado": true,
+    "dataPublicacao": "2026-09-26 8:33"
+  },
+  {
+    "id": 25,
+    "titulo": "Arrume a Sua Cama",
+    "subtitulo": "",
+    "autor": "William H. McRaven",
+    "categoria": "Desenvolvimento Pessoal",
+    "nota": "Nasceu de um discurso de formatura de um almirante da Marinha americana: pequenas disciplinas diárias como alicerce para o resto.",
+    "link": "https://link.amazon/B08O1Na07",
+    "capa": "https://m.media-amazon.com/images/I/71fabuPgAHL._SL1500_.jpg",
     "episodio": "",
     "publicado": false,
     "dataPublicacao": ""
